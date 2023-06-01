@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <script src="js/gestion_etudiants.js" defer></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar shadow navbar-expand-lg bg-light container " width="70vh">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="img/logo_iset.jpg" width="80px" height="80px"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-underline">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Cours</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="form.html">profile </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Liste
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item nav-scroll" href="#Consultation_des_Etudiants">Consultation des
+                    étudiants</a></li>
+                <li><a class="dropdown-item nav-scroll" href="#">Ajout d'un etudiant </a></li>
+                <li><a class="dropdown-item nav-scroll" href="#">reporter un etudiant </a></li>
+                <li><a class="dropdown-item nav-scroll" href="#">Supprimer un etudiant </a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link ">Contact</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Chercher un étudiant..." aria-label="Search" id="search_etud">
+            <button class="btn btn-outline-primary" id="search" type="submit"><a style="text-decoration: none;" href="#Consultation_des_Etudiants">Chercher</a></button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <section>
+    <div class="container card shadow mt-5" id="home">
+      <div>
+        <h1 class="title mb-5 ">Projet Web semestriel 2.0</h1>
+
+        <p class="font-weight-bold">Le projet CRUD de Gestion des étudiants est une application web développée en
+          utilisant JavaScript (JS) qui permet de gérer facilement les informations des étudiants. Avec cette
+          application, les utilisateurs peuvent créer de nouveaux profils étudiants, afficher les détails des étudiants
+          existants, mettre à jour les informations et supprimer des profils d'étudiants. </p>
+      </div>
+      <img src="img/etudiants.svg" width="100%" height="500vh">
+    </div>
+    <div class="container card shadow mt-5 mb-5" width="70%" height="300px" id="Consultation_des_Etudiants">
+      <h1 style="text-align: center;" class="mt-5 mb-5">Liste des Etudiants</h1>
+
+      <table id="table_etudiant" class="styled-table">
+      </table>
+
+    <div id="select_student">
+           <select id="select" class="form-select form-select-sm" aria-label=".form-select-sm example">
+            <option id="class"selected>Selectionner votre Classe</option>
+            <option value="TI">TI</option>
+            <option value="DSI">DSI</option>
+            <option value="SEM">SEM</option>
+          </select>
+    </div>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" id="ajout_etudiant"
+        data-bs-target="#staticBackdrop">
+        ajouter Etudiant
+      </button>
+     <button id="del" onclick="del()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+        <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+      </svg></button>
+
+    </div>
+  </section>
+  <div class="modal fade modal-dialog modal-dialog-centered" id="staticBackdrop" data-bs-backdrop="static"
+    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Formulaire Etudiant</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <div>
+            <div class="row">
+              <div class="col">
+
+                <input type="text" class="form-control" id="prenom" required placeholder="First name"
+                  aria-label="First name">
+              </div>
+              <div class="col">
+
+                <input type="text" class="form-control" id="nom" required placeholder="Last name"
+                  aria-label="Last name">
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="InputEmail" required aria-describedby="emailHelp" onblur="valid_mail()">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="col-12">
+            <label for="inputCIN" class="form-label">CIN</label>
+            <input type="number" class="form-control" required id="inputCIN" required
+              placeholder="Entrez votre code d'identité... " onblur="valid_CIN()">
+          </div>
+          <div class="mb-3">
+            <label for="inputCIN" class="form-label">Age</label>
+            <input type="number" class="form-control" id="Age" required min="18" max="30"
+              placeholder="Entrez votre age... ">
+          </div>
+          <div class="col-12">
+            <label for="inputClasse" class="form-label">Classe</label>
+            <input type="text" class="form-control" id="inputClasse" required placeholder="Entrez votre classe..">
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="creer_etudiant" onclick="creer_etudiant()"
+              data-bs-dismiss="modal">Submit</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="modal fade modal-dialog modal-dialog-centered" id="update_etudiant" data-bs-backdrop="static"
+    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Update Etudiant!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <div>
+            <div class="row">
+              <div class="col">
+
+                <input type="text" class="form-control" id="prenom_update" required placeholder="First name"
+                  aria-label="First name">
+              </div>
+              <div class="col">
+
+                <input type="text" class="form-control" id="nom_update" required placeholder="Last name"
+                  aria-label="Last name">
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="InputEmail_update" required aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="col-12">
+            <label for="inputCIN" class="form-label">CIN</label>
+            <input type="number" class="form-control" required id="inputCIN_update" required
+              placeholder="Entrez votre code d'identité... ">
+          </div>
+          <div class="mb-3">
+            <label for="inputCIN" class="form-label">Age</label>
+            <input type="number" class="form-control" id="age_update" required min="18" max="30"
+              placeholder="Entrez votre age... ">
+          </div>
+          <div class="col-12">
+            <label for="inputClasse" class="form-label">Classe</label>
+            <input type="text" class="form-control" id="inputClasse_update" required
+              placeholder="Entrez votre classe..">
+          </div>
+
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="upd-etud" data-bs-dismiss="modal">Submit</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="footer-dark">
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-md-3 item">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="#">Web design</a></li>
+              <li><a href="#">Development</a></li>
+              <li><a href="#">Hosting</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-md-3 item">
+            <h3>About</h3>
+            <ul>
+              <li><a href="#">Company</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+          <div class="col-md-6 item text">
+            <h3>Web projet</h3>
+            <p style="color:white;">Le projet CRUD de Gestion des étudiants est une application web développée en
+              utilisant JavaScript (JS) qui permet de gérer facilement les informations des étudiants. Avec cette
+              application, les utilisateurs peuvent créer de nouveaux profils étudiants, afficher les détails des étudiants
+              existants, mettre à jour les informations et supprimer des profils d'étudiants.</p>
+          </div>
+          <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i
+                class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a
+              href="#"><i class="icon ion-social-instagram"></i></a></div>
+        </div>
+        <p class="copyright" style="color:white; font-weight: 400;">Company Name © 2023</p>
+      </div>
+    </footer>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/form.css">
+    <script src="./js/index.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="center">
+        <div class="container1">
+            <label for="" class="close-btn"><img src="img/x-lg.svg"></label>
+            <div class="text" id="titre">Login form</div>
+            <form action="#" methode="POST" onsubmit="Validate_form()" id="log-admin">
+                <div class="data ">
+                    <label>Email or Phone</label>
+                    <input type="text" id="mail" class="form-control" required onblur="check_mail_user()">
+                    <div class="msg"  id="valid-mail"></div>
+                </div>
+                <div class="data ">
+                    <label>Password</label>
+                    <input type="password" id="password" class="form-control" required onblur="check_pass_user()">
+                    <div id="valid-pass" class="msg"></div>
+                </div>
+                <div class="forgot-pass"><a href="#">Forgot Password? </a></div>
+                <div class="btn">
+                    <div class="inner"></div>
+                    <button type="submit">Login</button>
+                </div>
+                <div class="signup-link">Not a member?<a href="#">Signup now!</a></div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

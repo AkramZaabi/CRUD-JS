@@ -1,0 +1,197 @@
+*{
+    padding:0;
+    margin:0;
+    
+}
+body{
+    font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;
+}
+header{
+    border-radius: 3px;
+}
+#home{
+    
+    display:grid;
+    grid-template-columns: 3fr 2fr;
+    align-items: center;
+    text-align: center;
+}
+
+#Contact{
+    
+    background-color: #00BFFF;
+    width:70px;
+    color:white;
+    border-radius: 30px;
+    padding:0.2rem;
+    border: 1px solid white;
+}
+nav ul li:hover{
+    transition:.2s;
+}
+nav{
+    font-weight: 500;
+}
+p{
+    line-height: 2rem;
+}
+.title
+{  
+  animation-name: let;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+@keyframes let {
+    0% {
+      letter-spacing: 2%;
+  }
+  50% {
+      letter-spacing: 1px;
+  }
+  100% {
+      letter-spacing: 2px;
+  }
+}
+.No_Contact{
+    display: grid;
+    place-items: center;
+    background-color: lightgrey;
+    height:50%;
+    width: 100%;
+}
+
+#ajout_etudiant{
+
+    width:15%;
+    height:50px;
+    font-weight: 400;
+    position: absolute;
+    top: 45px;
+    right: 60px;
+  
+    
+}
+#ajout_etudiant:hover{
+    outline-offset: 3px;
+}
+.nav-scroll:hover{
+    background-color: #00BFFF;
+    color:white;
+    font-weight: 400;
+}
+nav li{
+    color:#00BFFF;
+}
+table{
+    
+    margin-bottom: 300px;;
+    width: max-content;
+    width: 100%;
+    text-align: center;
+   
+}
+
+table .btn-delete{
+
+    color:red;
+
+}
+
+table button{
+    margin-right: 5px;
+    margin-top: 5px;
+}
+#staticBackdrop
+{
+    position:absolute;
+    left:400px;
+    top:300px;
+    overflow: hidden;
+    
+}
+#update_etudiant{
+    position:absolute;
+    left:400px;
+    top:850px;
+}
+.styled-tabl{
+
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    z-index: 0;
+    text-align: center;
+
+}
+.styled-table thead tr {
+    background-color: #1F75FE;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    text-align: center;
+}
+.styled-table    tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table  tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+    font-weight: bold;
+    color: #1F75FE;
+}
+
+.styled-table  tr:last-of-type {
+    border-bottom: 2px solid ;
+}
+.nav-item:hover {
+    border-bottom: #00BFFF;
+}
+h1{
+color:#1F75FE;
+
+}
+table tr {
+    color: grey;
+}
+p{
+    color: grey;
+}
+footer p{
+    color:grey;
+}
+.navbar .nav-link:hover {
+    border-bottom: #dddddd;
+  }
+#select_student{
+
+    width:240px;
+    position:absolute;
+    top:60px;
+    left:45px;
+    
+   
+}
+select option{
+    font-weight: 400;
+}
+button a:hover{
+ color:white;
+}
+nav button:hover{
+    color:white;
+}
+
+#del{
+
+    width: 50px;
+    border-radius: 5px;
+    background-color: red;
+    position: relative;
+    bottom: 25px;
+}

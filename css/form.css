@@ -1,0 +1,145 @@
+*{
+Margin: 0;
+padding: 0;
+outline: none;
+box-sizing: border-box;
+font-family: ‘Poppins’, sans-serif;
+}
+body{
+
+height: 100vh;
+width: 100%;
+opacity: 1;
+
+background-image: url("/img/bg.svg");
+  background-position: center top;
+background-size: cover; /* Adjust the background size as per your requirement */
+background-repeat: no-repeat;
+}
+.container1{
+    
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+.container1{
+    background: #fff;
+    width:410px;
+    height:470px;
+    padding:30px;
+    box-shadow:   0 0 8px rgba(0,0,0,0.1);
+}
+.container1 .text{
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.container1 form{
+    margin-top:-20px;
+}
+
+.container1 form .data{
+    height:45px;
+    width:100% ;
+    margin: 40px 0;
+
+}
+form .data label{
+    font-size: 18px;
+    color:grey;
+    
+}
+.container1 .data{
+    padding-top: 10px;
+}
+form .data input {
+    height: 100%;
+    width:100%;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 17px;
+    border:1px solid lightgrey;
+}
+form .btn{
+    margin:30px 0;
+    height:45px;
+    width:100%;
+    position:relative;
+    overflow: hidden;
+    margin-top: 50px;
+}
+
+form .btn .inner{
+ height:100%;
+ width:300%;
+ position: absolute;
+ left:-100%; 
+ z-index:-1;
+ background: -webkit-linear-gradient(right,#56d8e4, #9f01ea, #56d8e4, #9f01ea);
+transition: all 0.4s; 
+}
+form .btn:hover .inner{
+    left:0;
+}
+form .forgot-pass{
+    margin-left:-8px;
+   padding-top: 15px;
+}
+form .forgot-pass a{
+    color:#3498db;
+    text-decoration: none;
+}
+form .forgot-pass a:hover{
+    border-bottom: 1px solid #3498db;
+}
+form .btn  button{
+    background: none;
+    border:none;
+    height:100%;
+    width:100%;
+    color:#fff;
+    font-size: 18px;
+    font-weight:500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor:pointer;
+}   
+form .signup-link{
+ text-align: center;
+}
+form .signup-link a{
+    color:#3498db;
+    text-decoration: none;
+}
+form .signup-link a:hover{
+    text-decoration: underline;
+}
+.container1 .close-btn{
+    position: absolute;
+    right:20px;
+    top:15px;
+    cursor: pointer;
+}
+#Login{
+    color:white;
+    text-decoration: none;
+
+}
+.msg{
+    margin-top: 8px;
+    margin-bottom: 5px;
+    
+}
+.verified{
+color:#7CFC00;
+
+}
+.unverified{
+    color:#DC143C;
+   
+}
+#titre{
+    color:#3498db;
+}
